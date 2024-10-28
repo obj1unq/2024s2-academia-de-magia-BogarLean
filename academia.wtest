@@ -23,9 +23,9 @@ describe "Academia de Magia" {
 		baul.guardar(escoba)
 		gabineteMagico.guardar(varita)
 		armario.guardar(pelota)
-		academia.guardar(baul)
-		academia.guardar(gabineteMagico)
-		academia.guardar(armario)
+		academia.guardarMueble(baul)
+		academia.guardarMueble(gabineteMagico)
+		academia.guardarMueble(armario)
 	}
 /* ACLARACIÓN
  * Los tests están comentados para evitar errores y warnings, así poder ir incorporándolos 
@@ -37,7 +37,7 @@ describe "Academia de Magia" {
  		// TODO: Verificar que la pava NO está guardada en la academia
  		// TODO: Verificar que la lámpara NO está guardada en la academia
 
-		
+
  	}
 /* 
  * 	test "punto 1.2, saber en que mueble esta guardado algo" {
