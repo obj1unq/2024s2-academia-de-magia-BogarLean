@@ -1,6 +1,6 @@
 import cosas.*
 class Mueble {
-    const property cosas = #{}
+    const cosas = #{}
 
     method guardar(cosa) {
         self.validarGuardar(cosa)
@@ -13,7 +13,7 @@ class Mueble {
 class Baul inherits Mueble {
     var property volumenMaximo = 15
 
-    override validarGuardar(cosa) {
+    override method validarGuardar(cosa) {
         return if (cosa.volumen() >= self.volumenRestante()) {
             self.error("No hay espacio")
         }
@@ -25,9 +25,9 @@ class Baul inherits Mueble {
 }
 
 class GabineteMagico inherits Mueble{
-    override validarGuardar(cosa) {
+    override method validarGuardar(cosa) {
         return if (not cosa.esMagico()) {
-            sef.error(cosa + " no es mágico")
+            self.error(cosa + " no es mágico")
         }
     }
 }
@@ -35,7 +35,7 @@ class GabineteMagico inherits Mueble{
 class ArmarioConvencional inherits Mueble {
     var property cantidadMaxima = 5
 
-    override validarGuardar(cosa) {
+    override method validarGuardar(cosa) {
         return if (cantidadMaxima > self.cantidadRestante()) {
             self.error("No se pueden guardar más cosas")
         }
