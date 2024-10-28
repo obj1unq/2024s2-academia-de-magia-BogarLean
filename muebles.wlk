@@ -32,13 +32,17 @@ class GabineteMagico inherits Mueble{
     }
 }
 
-class GabineteConvencional inherits Mueble {
+class ArmarioConvencional inherits Mueble {
     var property cantidadMaxima = 5
 
     override validarGuardar(cosa) {
-        return if (self.cantidadCosas() == cantidadMaxima) {
+        return if (cantidadMaxima > self.cantidadRestante()) {
             self.error("No se pueden guardar más cosas")
         }
+    }
+
+    method cantidadRestante() {
+      return cantidadMaxima - cosas.size()
     }
 }
 

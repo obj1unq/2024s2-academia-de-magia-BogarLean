@@ -14,24 +14,31 @@ describe "Academia de Magia" {
 	const varita = new Cosa(volumen = 1, marca = fenix, esMagico = true, esReliquia = false)
 	const pava = new Cosa(volumen = 2, marca = acme, esMagico = false, esReliquia = true)
 	const lamparaAladino = new Cosa(volumen = 3, marca = fenix, esMagico = true, esReliquia = true)
-	const baul = new Baul(volumenMaximo = 5, cosas = #{escoba})
-	const gabineteMagico = null // TODO: construir/obtener un gabinete mágico con la varita dentro. El precio = 6 (segunda parte)
-	const armario = null // TODO: construir/obtener un armario con cantidad máxima = 2 y la pelota dentro
-	const academia = null // TODO: construir/obtener una academia que tiene el baúl, el gabinete mágico y el armario
-
+	const baul = new Baul(volumenMaximo = 5)
+	const gabineteMagico = new GabineteMagico() // El precio = 6 (segunda parte)
+	const armario = new ArmarioConvencional(cantidadMaxima = 2) // TODO: construir/obtener un armario con cantidad máxima = 2 y la pelota dentro
+	const academia = new Academia() // TODO: construir/obtener una academia que tiene el baúl, el gabinete mágico y el armario
+	
+	method initialize() {
+		baul.guardar(escoba)
+		gabineteMagico.guardar(varita)
+		armario.guardar(pelota)
+		academia.guardar(baul)
+		academia.guardar(gabineteMagico)
+		academia.guardar(armario)
+	}
 /* ACLARACIÓN
  * Los tests están comentados para evitar errores y warnings, así poder ir incorporándolos 
  * a medida que se avanza con la solución del ejercicio
  */
-/*
- * 	test "punto 1.1 saber si está guardado algo" {
- * 		// TODO: Verificar que la varita está guardada en la academia
- * 		// TODO: Verificar que la pelota está guardada en la academia
- * 		// TODO: Verificar que la escoba está guardada en la academia
- * 		// TODO: Verificar que la pava NO está guardada en la academia
- * 		// TODO: Verificar que la lámpara NO está guardada en la academia
- * 	}
- */
+  	test "punto 1.1 saber si está guardado algo" {
+  		// TODO: Verificar que la varita está guardada en la academia
+ 		// TODO: Verificar que la escoba está guardada en la academia
+ 		// TODO: Verificar que la pava NO está guardada en la academia
+ 		// TODO: Verificar que la lámpara NO está guardada en la academia
+
+		
+ 	}
 /* 
  * 	test "punto 1.2, saber en que mueble esta guardado algo" {
  * 		// TODO: Verificar que el mueble donde se guarda la varita está es el gabinete mágico

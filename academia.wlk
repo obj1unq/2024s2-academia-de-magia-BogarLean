@@ -1,7 +1,7 @@
 import muebles.*
 
-object academia {
-	const property muebles = {}
+class Academia {
+	const property muebles = #{}
 
 	method guardar(cosa) {
 	  self.validarMueble(cosa)
@@ -17,5 +17,9 @@ object academia {
 
 	method hayAlMenenosUnMuebleParaGuardar(cosa) {
 	  return not muebles.filter({mueble => mueble.validarGuardar(cosa)}).isEmpty()
+	}
+
+	method guardarMueble(mueble) {
+		muebles.add(mueble)
 	}
 }
